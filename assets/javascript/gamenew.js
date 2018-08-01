@@ -6,6 +6,8 @@ var enemyAttack;
 var enemiesArr = [];
 var isHeroSelected = false;
 var isEnemySelected = false;
+var healthUpdateDiv;
+var i =1;
 var characters = {
     'harry': {
         name: 'Harry Potter',
@@ -71,11 +73,12 @@ $("#player-1").on("click", function(){
     if(!isPlayerSelected){
         var enemyDiv = $("#enemy-display-row");
         enemyDiv.append($("#player-2"));
-        $("#player-1").addClass("enemy-2");
+        
         enemyDiv.append($("#player-3"));
-        $("#player-1").addClass("enemy-3");
+        
         enemyDiv.append($("#player-4"));
-        $("#player-1").addClass("enemy-4");
+        healthUpdateDiv = $("<div>");
+        $("#all-characters").append(healthUpdateDiv);
         heroHealth = characters.harry.health;
         heroAttack = characters.harry.attack;
         console.log(characters.harry.name);
@@ -265,6 +268,25 @@ $("#player-4").on("click", function(){
     }
 });
 
+$("#attack-button").on("click", function(){
+    attack(heroAttack, heroHealth, enemyAttack, enemyHealth);
+    console.log(heroHealth);
+});
+
+function attack(heroAttack, heroHealth, enemyAttack, enemyHealth){
+    if(heroHealth > 0){
+        // console.log(hh);
+
+        heroHealth = heroHealth - enemyAttack;
+        console.log("hero health is: " +heroHealth);
+        healthUpdateDiv.text(heroHealth);
+    }
+    if(enemyHealth > 0){
+        enemyHealth = enemyHealth - (heroAttack^i);
+        console.log("enemy health is: " +eh);
+        i++;
+    }
+}
 
 
 // if(flag=true){
