@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    background-image: url("../images/quidditch.jpg");
+    width: 100%;
+    height: 100%;
+}
+.char-img-box {
+    margin-left: 5px;
+    margin-right: 5px;
+    background: white;
+    padding: 10px;
+    border: 1px solid greenyellow;
+}
+.text-formating{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+}
+.enemy-img-box{
+    margin-left: 5px;
+    margin-right: 5px;
+    background: white;
+    padding: 10px;
+    border: 1px solid greenyellow; 
+}
+.enemy-1{
+    background: red;
+}
